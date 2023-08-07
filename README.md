@@ -30,7 +30,7 @@ lorem ipsum dolor
 **X** = 0.0032, **Y** = 0.0044.
 
 ## Credits
-- Dr. Frank Wuerthwein (PI)
+- Frank Wuerthwein (PI)
 - Jonathan Guiang (mentor)
 - Alejandro Dennis
 - Abraham Flores
