@@ -10,6 +10,24 @@ In the realm of particle physics, the Large Hadron Collider (LHC) stands as a co
 
 ## Results
 lorem ipsum dolor
+|             | **DNN > _X_** | **GNN > _Y_** | **Both** |
+|-------------|---------------|---------------|----------|
+| Real & Fake | 134876        | 128475        | 106670   |
+| Real        | 49628         | 49628         | 48966    |
+| Fake        | 85248         | 78847         | 57704    |
+
+**Table 1.** Table of LS selected for a TPR > 0.95. _Note_:
+**X** = 0.0328, **Y** = 0.0385.
+
+lorem ipsum dolor
+|             | **DNN > _X_** | **GNN > _Y_** | **Both** |
+|-------------|---------------|---------------|----------|
+| Real & Fake | 302497        | 313556        | 245207   |
+| Real        | 51716         | 51717         | 51446    |
+| Fake        | 250781        | 261839        | 193761   |
+
+**Table 2.** Table of LS selected for a TPR > 0.99. _Note_:
+**X** = 0.0032, **Y** = 0.0044.
 
 ## Credits
 - Dr. Frank Wuerthwein (PI)
