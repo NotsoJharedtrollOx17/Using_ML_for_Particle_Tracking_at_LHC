@@ -9,7 +9,6 @@ In the realm of particle physics, the Large Hadron Collider (LHC) stands as a co
 
 
 ## Results
-
 As per the poster data, the training aspect of the model consisted in training two types of DNNs:
 1. _Small_ DNN: A DNN where its arquitechture consists of 2 hidden layers of 32 neurons each and was trained with a learning rate of 0.002, a batch size of 1000 data entries per batch and for 50 epochs.
 2. _Big_ DNN: A DNN wherre its arquitecture consists of 2 hidden layers of 200 neurons each and was trained with a learning rate of 0.002, a batch size of 1000 data entries per batch and for 100 epochs.
@@ -24,8 +23,8 @@ On a related matter to the histogram overlaps, a better way to understand the ra
 Continuing with the same plot, we plotted two square dots to further reference the estimated coordinates of where we could find a TPR > 0.95, and a TPR > 0.99 respectively, which in turn, can tell us the actual threshold to use for the model to actually comply with these TPR ranges.
 The followup tables contain the distilled numbers of the total of LS that both the DNN and GNN classified given their respective threshold that satisfy the previous TPR boundaries.
 
-On both **Table 1** and **Table 2** (also included in the poster) we observe that we get a similar distribution (Predicted Scores Histogram) of data that was predicted as _Real_ and _Fake_, the interesing detail is that, using the same testing datasete for both inferences with the DNN and the GNN, these models
-are using a substantial amount of the same LS for their predictions.
+On both **Table 1** and **Table 2** (also included in the poster) we observe that we get a similar distribution (Predicted Scores Histogram) of data that was predicted as _Real_ and _Fake_, the interesing detail is that, using the same testing dataset for both inferences with the DNN and the GNN, these models
+are using a _substantial amount of the same LS for their predictions._
 
 |             | **DNN > _X_** | **GNN > _Y_** | **Both** |
 |-------------|---------------|---------------|----------|
