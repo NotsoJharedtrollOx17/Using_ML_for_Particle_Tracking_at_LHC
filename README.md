@@ -4,11 +4,16 @@ Source code of the project titled: _"Using Machine Learning for Particle Trackin
 This project was made for the ENLACE 2023 Research Summer Camp at the UCSD in a timeframe of 7 weeks and it's results were to be commited into a
 poster (available in the repo) as part of the requirements for the University Students' projects. Most of the code is developed with the Pytorch module.
 
-## Description
+# Authors
+
+- Alejandro Dennis
+- Abraham Jhared Flores Azcona _(NotsoJharedtrollOx17)_  ``abrahamjhared.flores@gmail.com``
+
+# Description
 In the realm of particle physics, the Large Hadron Collider (LHC) stands as a colossal accelerator in Geneva, Switzerland, with its intricate network of superconducting magnets propelling particles to immense energies for experimental collisions. Within the LHC, the Compact Muon Solenoid (CMS) experiment captures the paths of charged particles through a powerful magnetic field, aiming to distinguish accurate tracks amidst the complex particle interactions. Addressing the challenge of efficient track identification, the Line Segment Tracking (LST) algorithm emerges as a solution, reconstructing particle trajectories piece-by-piece, forming linear segments. Notably, LST's modular approach allows for parallelizability, a crucial attribute in tackling the intricate scenarios posed by the forthcoming High-Luminosity LHC (HL-LHC). While LST thrives in parallel processing, it faces limitations in handling increasingly complex scenarios sequentially, thereby highlighting the imperative of harnessing the power of Machine Learning (ML) techniques. This pivotal role of ML is exemplified in our architecture, which leverages Deep Neural Networks (DNNs) with varying hidden layer sizes to process Linear Segments (LS), culminating in an output neuron discerning the authenticity of the track. The convergence of the loss function during training, influenced by the hidden layer size and model hyperparameters, underscores the symbiotic relationship between advanced ML and the progressive analysis of particle tracks.
 
 
-## Results
+# Results
 As per the poster data, the training aspect of the model consisted in training two types of DNNs:
 1. _Small_ DNN: A DNN where its arquitechture consists of 2 hidden layers of 32 neurons each and was trained with a learning rate of 0.002, a batch size of 1000 data entries per batch and for 50 epochs.
 2. _Big_ DNN: A DNN wherre its arquitecture consists of 2 hidden layers of 200 neurons each and was trained with a learning rate of 0.002, a batch size of 1000 data entries per batch and for 100 epochs.
@@ -44,8 +49,28 @@ are using a _substantial amount of the same LS for their predictions._
 **Table 2.** Table of LS selected for a TPR > 0.99. _Note_:
 **X** = 0.0032, **Y** = 0.0044.
 
-## Credits
-- Alejandro Dennis
-- Abraham Flores
+# Credits
+
 - Jonathan Guiang (mentor)
 - Frank Wuerthwein (PI)
+
+# License
+
+MIT License
+
+# Acknowledgement of AI Usage
+
+lorem ipsum dolor
+
+# Citation
+
+```
+@misc{
+    dennisflores2023enlaceucsdproject,
+    title = {Using Machine Learning for Particle Tracking at the Large Hadron Collider},
+    author = {Flores-Azcona, Abraham Jhared and Dennis, Alejandro},
+    year = {2023},
+    month = {August},
+    url = {https://github.com/NotsoJharedtrollOx17/Using_ML_for_Particle_Tracking_at_LHC}
+}
+```
