@@ -49,6 +49,22 @@ are using a _substantial amount of the same LS for their predictions._
 **Table 2.** Table of LS selected for a TPR > 0.99. _Note_:
 **X** = 0.0032, **Y** = 0.0044.
 
+<img src="./results/plots/loss_curve_Big_DNN.png" alt="lorem ipsum dolor" width="800" height="500"/>
+
+**Figure 1.** Loss Curve of Big DNN.
+
+<img src="./results/plots/predicted_scores_test_Big_DNN.png" alt="lorem ipsum dolor" width="800" height="500"/>
+
+**Figure 2.** Histogram of Predicted Scores During Testing for Big DNN.
+
+<img src="./results/plots/roc_curve_GNN_vs_Small_DNN.png" alt="lorem ipsum dolor" width="800" height="500"/>
+
+**Figure 3.** ROC Curve of Lab's GNN versus our Small DNN.
+
+<img src="./results/plots/roc_curve_GNN_vs_Big_DNN.png" alt="lorem ipsum dolor" width="800" height="500"/>
+
+**Figure 4.** ROC Curve of Lab's GNN versus our Big DNN.
+
 # Credits
 
 - Jonathan Guiang (mentor)
