@@ -76,7 +76,9 @@ MIT License
 
 # Acknowledgement of AI Usage
 
-lorem ipsum dolor
+We hereby state that ChatGPT<sup>1</sup> was utilized for the analysis, interpretation, and code development of the data pipeline that generated the provided plots in the report.
+
+> <sup>1</sup> Full conversation available at [`./ai-conversation/ENLACE-2023-project.md`](./ai-conversation/ENLACE-2023-project.md). The beginning of the backup indicates that it was extracted from Gemini because the original conversation was exported into Gemini.
 
 # Citation
 
