@@ -18,6 +18,26 @@ In the realm of particle physics, the Large Hadron Collider (LHC) stands as a co
 
 # Methods
 
+We subdivide this section further into the following subsections: (1) Compared Models, and (2) Code Pipeline. In (1) we describe the hyperparameters of the GNN, the Small DNN, and the Big DNN. In (2) we briefly describe the code snippets of the `./code/` directory and their purpose for extracting results of our model comparison.
+
+## Compared Models
+
+We compared the lab's GNN prediction accuracy with our proposed models, the _Small DNN_ and the _Big DNN_. Hyperparameter data for the models can be appreciated in **Table 1**  The main difference between the _Small DNN_ and the _Big DNN_ is the number of neurons per layer, while the rest of hyperparameters stays the same.
+
+The comparisons made are in the following arrangement: (i) GNN vs. _Small DNN_, and (ii) GNN vs. _Big DNN_. We believed that the GNN model will remain the solid contender for the LS classification task, so it was deemed neccesary to compare the GNN against (i) a DNN with less neurons per layer, and (ii) one with more neurons per layer. This comparison allows the recollection of accuracy metrics to determine the best contender overall.
+
+| Hyperparameters / Model | **GNN*** | **_Small DNN_** | **_Big DNN_** |
+|---------------------|---------------|---------------|----------|
+| _Input Features_    | 7 node feat. & 3 edge feat. | 14        | 14   |
+| _# Hidden Layers_   | 1                           | 2         | 2    |
+| _Neurons per Layer_ | 200                         | 32        | 100    |
+| _Learning Rate_     | 0.005**                     | 0.002     | 57704    |
+| _Epochs_            | 50                          | 50        | 57704    |
+
+**Table 1.** Hyperparemeter Values for Compared Models. _Note_: * the GNN model was trained by Phillip Chang. ** This value steadily decreased by a factor 0.7, every 5 epochs.
+
+## Code Pipeline
+
 lorem ipsum dolor
 
 # Results
@@ -35,7 +55,7 @@ On a related matter to the histogram overlaps, a better way to understand the ra
 Continuing with the same plot, we plotted two square dots to further reference the estimated coordinates of where we could find a TPR > 0.95, and a TPR > 0.99 respectively, which in turn, can tell us the actual threshold to use for the model to actually comply with these TPR ranges.
 The followup tables contain the distilled numbers of the total of LS that both the DNN and GNN classified given their respective threshold that satisfy the previous TPR boundaries.
 
-On both **Table 1** and **Table 2** (also included in the poster) we observe that we get a similar distribution (Predicted Scores Histogram) of data that was predicted as _Real_ and _Fake_, the interesing detail is that, using the same testing dataset for both inferences with the DNN and the GNN, these models
+On both **Table 2** and **Table 3** (also included in the poster) we observe that we get a similar distribution (Predicted Scores Histogram) of data that was predicted as _Real_ and _Fake_, the interesing detail is that, using the same testing dataset for both inferences with the DNN and the GNN, these models
 are using a _substantial amount of the same LS for their predictions._
 
 |             | **DNN > _X_** | **GNN > _Y_** | **Both** |
@@ -44,7 +64,7 @@ are using a _substantial amount of the same LS for their predictions._
 | Real        | 49628         | 49628         | 48966    |
 | Fake        | 85248         | 78847         | 57704    |
 
-**Table 1.** Table of LS selected for a TPR > 0.95. _Note_:
+**Table 2.** Table of LS selected for a TPR > 0.95. _Note_:
 **X** = 0.0328, **Y** = 0.0385.
 
 |             | **DNN > _X_** | **GNN > _Y_** | **Both** |
@@ -53,7 +73,7 @@ are using a _substantial amount of the same LS for their predictions._
 | Real        | 51716         | 51717         | 51446    |
 | Fake        | 250781        | 261839        | 193761   |
 
-**Table 2.** Table of LS selected for a TPR > 0.99. _Note_:
+**Table 3.** Table of LS selected for a TPR > 0.99. _Note_:
 **X** = 0.0032, **Y** = 0.0044.
 
 <img src="./results/plots/loss_curve_Big_DNN.png" alt="lorem ipsum dolor" width="800" height="500"/>
