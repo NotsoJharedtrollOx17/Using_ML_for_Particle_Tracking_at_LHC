@@ -9,9 +9,16 @@ poster (available in the repo) as part of the requirements for the University St
 - Alejandro Dennis
 - Abraham Jhared Flores Azcona _(NotsoJharedtrollOx17)_  ``abrahamjhared.flores@gmail.com``
 
-# Description
-In the realm of particle physics, the Large Hadron Collider (LHC) stands as a colossal accelerator in Geneva, Switzerland, with its intricate network of superconducting magnets propelling particles to immense energies for experimental collisions. Within the LHC, the Compact Muon Solenoid (CMS) experiment captures the paths of charged particles through a powerful magnetic field, aiming to distinguish accurate tracks amidst the complex particle interactions. Addressing the challenge of efficient track identification, the Line Segment Tracking (LST) algorithm emerges as a solution, reconstructing particle trajectories piece-by-piece, forming linear segments. Notably, LST's modular approach allows for parallelizability, a crucial attribute in tackling the intricate scenarios posed by the forthcoming High-Luminosity LHC (HL-LHC). While LST thrives in parallel processing, it faces limitations in handling increasingly complex scenarios sequentially, thereby highlighting the imperative of harnessing the power of Machine Learning (ML) techniques. This pivotal role of ML is exemplified in our architecture, which leverages Deep Neural Networks (DNNs) with varying hidden layer sizes to process Linear Segments (LS), culminating in an output neuron discerning the authenticity of the track. The convergence of the loss function during training, influenced by the hidden layer size and model hyperparameters, underscores the symbiotic relationship between advanced ML and the progressive analysis of particle tracks.
+# Abstract
 
+lorem ipsum dolor
+
+# Introduction
+In the realm of particle physics, the Large Hadron Collider (LHC) stands as a colossal accelerator in Geneva, Switzerland, with its intricate network of superconducting magnets propelling particles to immense energies for experimental collisions. Within the LHC, the Compact Muon Solenoid (CMS) experiment captures the paths of charged particles through a powerful magnetic field, aiming to distinguish accurate tracks amidst the complex particle interactions. Addressing the challenge of efficient track identification, the Line Segment Tracking (LST) algorithm emerges as a solution, reconstructing particle trajectories piece-by-piece, forming linear segments. Notably, LST's modular approach allows for parallelizability, a crucial attribute in tackling the intricate scenarios posed by the forthcoming High-Luminosity LHC (HL-LHC). While LST thrives in parallel processing, it faces limitations in handling increasingly complex scenarios sequentially, thereby highlighting the imperative of harnessing the power of Machine Learning (ML) techniques. This pivotal role of ML is exemplified in our architecture, which leverages Deep Neural Networks (DNNs) with varying hidden layer sizes to process Linear Segments (LS), culminating in an output neuron discerning the authenticity of the track. As a result, we trained two neural networks: (i) Big DNN, and (ii) Small DNN. We compare both model proposals with the lab's main contender, a Graph Neural Network (GNN) model utilizing the same LS while considering their edges and nodes due to the Graph nature of the architechture. We postuladed _a-priori_ that the GNN will be more accurate than our proposed DNNs for the classification task of the LS analyzed.
+
+# Methods
+
+lorem ipsum dolor
 
 # Results
 As per the poster data, the training aspect of the model consisted in training two types of DNNs:
@@ -64,6 +71,14 @@ are using a _substantial amount of the same LS for their predictions._
 <img src="./results/plots/roc_curve_GNN_vs_Big_DNN.png" alt="lorem ipsum dolor" width="800" height="500"/>
 
 **Figure 4.** ROC Curve of Lab's GNN versus our Big DNN.
+
+# Discussion
+
+lorem ipsum dolor
+
+# Conclusion
+
+lorem ipsum dolor
 
 # Credits
 
