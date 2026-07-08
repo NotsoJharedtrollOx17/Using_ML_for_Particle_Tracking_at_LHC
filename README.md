@@ -20,6 +20,8 @@ In the realm of particle physics, the Large Hadron Collider (LHC) stands as a co
 
 We subdivide this section further into the following subsections: (1) Compared Models, and (2) Code Pipeline. In (1) we describe the hyperparameters of the GNN, the Small DNN, and the Big DNN. In (2) we briefly describe the code snippets of the `./code/` directory and their purpose for extracting results of our model comparison.
 
+All of our Machine Learning experiments were executed inside one remote session of a Linux enviroment provided by the UCSD Supercomputing Cluster. All relevant plots were stored inside `./results/plots/` and they are displayed in the following **Results** section.
+
 ## Compared Models
 
 We compared the lab's GNN prediction accuracy with our proposed models, the _Small DNN_ and the _Big DNN_. Hyperparameter data for the models can be appreciated in **Table 1**  The main difference between the _Small DNN_ and the _Big DNN_ is the number of neurons per layer, while the rest of hyperparameters stays the same.
@@ -38,12 +40,24 @@ The comparisons made are in the following arrangement: (i) GNN vs. _Small DNN_, 
 
 ## Code Pipeline
 
-lorem ipsum dolor
+In summary, our pipeline consists of helper files, main collation files, training and testing files, and analysis files as well. In particular, for (v) we utilize an Adam optimized per the suggestion of ChatGPT. Furthermore, our mentor considered relevant to utilize the ROC Curve inside (viii) to visualize how well, or how poorly, our trained models were performing _in constrast with_ the lab's GNN.
+
+Adding further, the ROC Curve tells us how accurate and reliable are its predictions of a given binary classification model. We then plot both the GNN and Small DNN curves, and the GNN and Big DNN curves as well, to visually check _how juxtaposed_ are they. If the DNN curve is visually distinct from the GNN curve, we can ascertain that the GNN is doing better for this classification task. If they appear stacked on top of each other, with little to no gaps, the models are performing similar to each other. For an additional empirical check, we also calculate the ROC Curve Area of each model to numerically confirm the performance difference.
+
+| Pipeline Order | Filename | Description |
+|---------------------|---------------|---------------|
+| i    | `utils.py`                   | _Helper file for a simple progress bar display in the console during the training phase._        |
+| ii   | `DeepNeuralNetwork_class.py` | _Helper file with the class defining the size and other features of the DNN models._ |
+| iii  | `datasets.py`                | _Helper file with useful LS dataset classes to parse datapoints easily._       |
+| iv   | `ingress.py`                 | _Preprocessing pipeline for the LS data. It stabilizes the numerical ranges of the data with log scaling for easier analysis._     |
+| v    | `train.py`                   | _Trains the desired model and saves a brief training summary into a JSON file._        |
+| vi   | `inference.py`              | _Tests the models and exports its inferences into a CSV file for further processing_     |
+| vii  | `exploration.py`             | _Exploratory dataset analysis to calculate the best matches of True Positive Rate ratios on the trained models._     |
+| viii | `plots.py`                   | _Console menu to plot the features of the LS dataset as histograms, the loss curve of the trained model, its predicted scores, and the ROC curve comparison between the models._     |
+
+**Table 2.** Description of Python Pipeline Files. _Note_: all files can be found inside the `./code/` directory of this repository.
 
 # Results
-As per the poster data, the training aspect of the model consisted in training two types of DNNs:
-1. _Small_ DNN: A DNN where its arquitechture consists of 2 hidden layers of 32 neurons each and was trained with a learning rate of 0.002, a batch size of 1000 data entries per batch and for 50 epochs.
-2. _Big_ DNN: A DNN wherre its arquitecture consists of 2 hidden layers of 200 neurons each and was trained with a learning rate of 0.002, a batch size of 1000 data entries per batch and for 100 epochs.
 
 The focus of our results will be on those obtained with the aforementioned _Big_ DNN. The loss curve plot of both the training and testing datasets indicates that the model is indeed learning patters in the training dataset that _are applicable_ to those in the testing dataset and any other dataset for that matter; because both curves are trending downwards. If both curves where to diverge in any point in the epochs, we say taht the model is overfitting; simply put, that the model learned too much to the point that it became quite specialized in detecting patters **of the training dataset only**.
 
@@ -55,7 +69,7 @@ On a related matter to the histogram overlaps, a better way to understand the ra
 Continuing with the same plot, we plotted two square dots to further reference the estimated coordinates of where we could find a TPR > 0.95, and a TPR > 0.99 respectively, which in turn, can tell us the actual threshold to use for the model to actually comply with these TPR ranges.
 The followup tables contain the distilled numbers of the total of LS that both the DNN and GNN classified given their respective threshold that satisfy the previous TPR boundaries.
 
-On both **Table 2** and **Table 3** (also included in the poster) we observe that we get a similar distribution (Predicted Scores Histogram) of data that was predicted as _Real_ and _Fake_, the interesing detail is that, using the same testing dataset for both inferences with the DNN and the GNN, these models
+On both **Table 3** and **Table 4** (also included in the poster) we observe that we get a similar distribution (Predicted Scores Histogram) of data that was predicted as _Real_ and _Fake_, the interesing detail is that, using the same testing dataset for both inferences with the DNN and the GNN, these models
 are using a _substantial amount of the same LS for their predictions._
 
 |             | **DNN > _X_** | **GNN > _Y_** | **Both** |
@@ -64,7 +78,7 @@ are using a _substantial amount of the same LS for their predictions._
 | Real        | 49628         | 49628         | 48966    |
 | Fake        | 85248         | 78847         | 57704    |
 
-**Table 2.** Table of LS selected for a TPR > 0.95. _Note_:
+**Table 3.** Table of LS selected for a TPR > 0.95. _Note_:
 **X** = 0.0328, **Y** = 0.0385.
 
 |             | **DNN > _X_** | **GNN > _Y_** | **Both** |
@@ -73,7 +87,7 @@ are using a _substantial amount of the same LS for their predictions._
 | Real        | 51716         | 51717         | 51446    |
 | Fake        | 250781        | 261839        | 193761   |
 
-**Table 3.** Table of LS selected for a TPR > 0.99. _Note_:
+**Table 4.** Table of LS selected for a TPR > 0.99. _Note_:
 **X** = 0.0032, **Y** = 0.0044.
 
 <img src="./results/plots/loss_curve_Big_DNN.png" alt="lorem ipsum dolor" width="800" height="500"/>
