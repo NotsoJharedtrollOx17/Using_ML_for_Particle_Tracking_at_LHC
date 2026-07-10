@@ -105,7 +105,11 @@ On both **Table 3** and **Table 4** we observe that we get a similar distributio
 
 # Discussion
 
-lorem ipsum dolor
+The development of the data pipeline in Python was the greatest challenge we had. Because the internship were to last a month a half, our fast-learning abilities were to be harvested. With the advent of LLM tools like Chat GPT, we were able to close the knowledge gaps required to develop such findings. Furthermore, utilizing the guidance of our mentor Jonathan Guiang, our research goals were reachable for the scope of this experience, which includes our model proposals for the Line Segment Classification Task.
+
+It is particularly relevant to highlight that with little to no knowledge of the common Data Science workflow, we achieved results that broke our expectations. The proposals of the _Big DNN_ and the _Small DNN_ with their respective hyperparameters came to be with no formal procedure. They were proposed by the authors as a _guestimation_ to start our investigation, where we did not have any expectations of a remarkable result. On that point, the results obtained from the _Small DNN_ were the actual expectation of our job, while the results coming from the _Big DNN_ were the surprise that challenged our initial performance hypothesis, and ourselves.
+
+We must remind the reader that our Research & Development workflow was positively augmented with Chat GPT, which launched into stardom due to its vast amount of uses, where one of them is code development. We believe that any knowledge gaps regarding our Machine Learning knowledge, which were slim to none at the start of the internship, were mitigated by the constant Socratic interaction with the system. As a result, this project also accounts as solid evidence suggesting the strong use case of LLM-based tools for academic research, and knowledge acquisition under tight deadlines.
 
 # Conclusion
 
