@@ -59,36 +59,33 @@ Adding further, the ROC Curve tells us how accurate and reliable are its predict
 
 # Results
 
-The focus of our results will be on those obtained with the aforementioned _Big_ DNN. The loss curve plot of both the training and testing datasets indicates that the model is indeed learning patters in the training dataset that _are applicable_ to those in the testing dataset and any other dataset for that matter; because both curves are trending downwards. If both curves where to diverge in any point in the epochs, we say taht the model is overfitting; simply put, that the model learned too much to the point that it became quite specialized in detecting patters **of the training dataset only**.
+The section focuses on the results obtained with the aforementioned _Big DNN_ . The loss curve plot of both the training and testing datasets **[Figure 1]** indicates that the model is indeed learning patters in the training dataset which _are generalizable_ to values in the testing dataset. A curious pattern arose during the training phase, which is this sudden spiky movement similar to the peaks and bottoms of a rollercoaster track.
 
-The prediction scores histogram indicates us at a glance that the vast mayority of data entries of our testing dataset are indeed labeled as _Fake_ and that the model is predicting them as such, hence the distribution of _Fake_ LS near the origin. On a similar fashion, the rest of the LS that are labeled as _Real_ are distributed to the far right, indicating that the model indeed is predicting those _Real_ LS as _Real_.
-Nevertheless, we can appreciate a little overlap of _Real_ LS on top of the _Fake_ LS of the far left of the plot, which means that the model _mispredicted_ certain LS that are labeled as _Real_, and classified them as _Fake_; this a given with models related to Binary Classification.
+The prediction scores histogram **[Figure 2]** indicates that the vast majority of data entries of our testing dataset labeled as _Fake_ are indeed classified as _Fake_ by the model. This can be appreciated with the blue distribution of _Fake_ LS near the origin. On a similar fashion, the rest of the LS labeled as _Real_ are distributed to the far right, indicating that the model is classifying them as _Real_. Nevertheless, we can appreciate a little overlap of _Real_ LS on top of the _Fake_ LS of the far left of the plot, which means that the model _did not predicted_ certain LS labeled as _Real_, and classified them as _Fake_; this a given with models related to Binary Classification. On retrospect, the y-axis magnitude was scaled by our mistake into a continuous range of [0, 1]. Most _Fake_ LS which are indeed _Fake_ account for over 70% of the dataset. This is relevant to understand the plot.
 
-On a related matter to the histogram overlaps, a better way to understand the rate at which is expected that the model will make this mispredictions iw with the help of a ROC Curve, which at a glance is telling us if the model is peforming accurate estimations of the _Real_ LS (TPR ) in contrast to those _Fake_ LS that are mispredicted as _Real_ (FPR). For the context of the comparison of the GNN vs the DNN, this curve tell us exactly by how much the model's peformance is similar to one another. On the first ROC Curve, we can observe tht the peformance of the _Small_ DNN is actually worse in comparison to the GNN, but in the case of the _Big_ DNN versus the GNN, we observe that this DNN is doing almost the same work with a simpler arquitechture in contrast to the complex nature of the GNN, which for technical reasos such as the time of training and the time of developing the model pipeline, the _Big_ DNN is better for our sake and purposes of classifying LS.
+Regarding the prediction behaviour, a better way to understand the rate at which we expect mispredictions of the model is with the help of a ROC Curve. It can help by telling us if the model is performing accurate estimations of the _Real_ LS labeled as such (TPR) in contrast to those _Fake_ LS labeled as such being misclassified as _Real_ (FPR). For the comparison of the _GNN_ vs the _Big DNN_, the curve tell us how similar their classifications are to one another. On the first ROC Curve **[Figure 3]**, we can observe that the classification performance of the _Small DNN_ is worse in comparison to the GNN. In contrast with the case of the _Big DNN_ versus the _GNN_, we observe that our DNN is performing as well as the _GNN_ **[Figure 4]**.
 
-Continuing with the same plot, we plotted two square dots to further reference the estimated coordinates of where we could find a TPR > 0.95, and a TPR > 0.99 respectively, which in turn, can tell us the actual threshold to use for the model to actually comply with these TPR ranges.
-The followup tables contain the distilled numbers of the total of LS that both the DNN and GNN classified given their respective threshold that satisfy the previous TPR boundaries.
+Utilizing the same ROC Curve, we plotted two square dots on top of the curve to further reference the estimated coordinates of threshold values which allow a TPR > 0.95, and a TPR > 0.99 respectively. Both of these value thresholds are used to measure the classification accuracy of the models with strict TPR criteria. To appreciate the effect of these ranges on the classification task, the following tables contain the distilled numbers of the total LS considered as a _True Positive_ after surpassing the aforementioned thresholds.
 
-On both **Table 3** and **Table 4** (also included in the poster) we observe that we get a similar distribution (Predicted Scores Histogram) of data that was predicted as _Real_ and _Fake_, the interesing detail is that, using the same testing dataset for both inferences with the DNN and the GNN, these models
-are using a _substantial amount of the same LS for their predictions._
+On both **Table 3** and **Table 4** we observe that we get a similar distribution of LS predicted as _Real_ and _Fake_ (like the plot of **Figure 2**). The interesting detail is that, by using the same testing dataset for both the DNN and the GNN, the models are selecting a _substantial amount of the same LS for their respective predictions._
 
-|             | **DNN > _X_** | **GNN > _Y_** | **Both** |
+|             | **DNN > _X_** | **GNN > _Y_** | **Both Models** |
 |-------------|---------------|---------------|----------|
 | Real & Fake | 134876        | 128475        | 106670   |
 | Real        | 49628         | 49628         | 48966    |
 | Fake        | 85248         | 78847         | 57704    |
 
 **Table 3.** Table of LS selected for a TPR > 0.95. _Note_:
-**X** = 0.0328, **Y** = 0.0385.
+**X** = 0.0328, **Y** = 0.0385. **DNN**: _Big DNN_.
 
-|             | **DNN > _X_** | **GNN > _Y_** | **Both** |
+|             | **DNN > _X_** | **GNN > _Y_** | **Both Models** |
 |-------------|---------------|---------------|----------|
 | Real & Fake | 302497        | 313556        | 245207   |
 | Real        | 51716         | 51717         | 51446    |
 | Fake        | 250781        | 261839        | 193761   |
 
 **Table 4.** Table of LS selected for a TPR > 0.99. _Note_:
-**X** = 0.0032, **Y** = 0.0044.
+**X** = 0.0032, **Y** = 0.0044. **DNN**: _Big DNN_.
 
 <img src="./results/plots/loss_curve_Big_DNN.png" alt="lorem ipsum dolor" width="800" height="500"/>
 
