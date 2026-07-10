@@ -33,8 +33,8 @@ The comparisons made are in the following arrangement: (i) GNN vs. _Small DNN_, 
 | _Input Features_    | 7 node feat. & 3 edge feat. | 14        | 14   |
 | _# Hidden Layers_   | 1                           | 2         | 2    |
 | _Neurons per Layer_ | 200                         | 32        | 100    |
-| _Learning Rate_     | 0.005**                     | 0.002     | 57704    |
-| _Epochs_            | 50                          | 50        | 57704    |
+| _Learning Rate_     | 0.005**                     | 0.002     | 0.002  |
+| _Epochs_            | 50                          | 50        | 100    |
 
 **Table 1.** Hyperparemeter Values for Compared Models. _Note_: * the GNN model was trained by Phillip Chang. ** This value steadily decreased by a factor 0.7, every 5 epochs.
 
