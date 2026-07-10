@@ -18,7 +18,7 @@ In the realm of particle physics, the Large Hadron Collider (LHC) stands as a co
 
 # Methods
 
-We subdivide this section further into the following subsections: (1) Compared Models, and (2) Code Pipeline. In (1) we describe the hyperparameters of the GNN, the Small DNN, and the Big DNN. In (2) we briefly describe the code snippets of the `./code/` directory and their purpose for extracting results of our model comparison.
+We subdivide this section further into the following subsections: (1) Compared Models, and (2) Code Pipeline. In (1) we describe the hyperparameters of the GNN, the _Small DNN,_ and the _Big DNN_. In (2) we briefly describe the code snippets of the `./code/` directory and their purpose for extracting results of our model comparison.
 
 All of our Machine Learning experiments were executed inside one remote session of a Linux environment provided by the UCSD Supercomputing Cluster. All relevant plots were stored inside `./results/plots/` and they are displayed in the following **Results** section.
 
@@ -42,7 +42,7 @@ The comparisons made are in the following arrangement: (i) GNN vs. _Small DNN_, 
 
 In summary, our pipeline consists of helper files, main collation files, training and testing files, and analysis files as well. In particular, for (v) we utilize an Adam optimized per the suggestion of ChatGPT. Furthermore, our mentor considered relevant to utilize the ROC Curve inside (viii) to visualize how well, or how poorly, our trained models were performing _in contrast with_ the lab's GNN.
 
-Adding further, the ROC Curve tells us how accurate and reliable are its predictions of a given binary classification model. We then plot both the GNN and Small DNN curves, and the GNN and Big DNN curves as well, to visually check _how juxtaposed_ are they. If the DNN curve is visually distinct from the GNN curve, we can ascertain that the GNN is doing better for this classification task. If they appear stacked on top of each other, with little to no gaps, the models are performing similar to each other. For an additional empirical check, we also calculate the ROC Curve Area of each model to numerically confirm the performance difference.
+Adding further, the ROC Curve tells us how accurate and reliable are the predictions of a given binary classification model. We then plot both the GNN and _Small DNN_ curves, and the GNN and _Big DNN_ curves as well, to visually check _how juxtaposed_ are they. If the DNN curve is visually distinct from the GNN curve, we can ascertain that the GNN is doing better for this classification task. If they appear stacked on top of each other, with little to no gaps, the models are performing similar to each other. For an additional empirical check, we also calculate the ROC Curve Area of each model to numerically confirm the performance difference.
 
 | Pipeline Order | Filename | Description |
 |---------------------|---------------|---------------|
