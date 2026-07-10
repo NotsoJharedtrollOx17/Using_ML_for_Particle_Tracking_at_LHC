@@ -109,7 +109,7 @@ lorem ipsum dolor
 
 # Conclusion
 
-lorem ipsum dolor
+The collected evidence strongly suggests that our proposed _Big DNN_ model is a viable alternative to the lab's own _GNN_ for the Line Segment classification task. Furthermore, we believe that a simpler model architecture can lead to savings in processing power cost, and a model development process with less technical debt. The binary classification task of the Line Segments does no benefit further from accounting nodes and edges, but from a model that has a large number of activations per layer. Further research is needed to validate the claims presented on this report.
 
 # Credits
 
