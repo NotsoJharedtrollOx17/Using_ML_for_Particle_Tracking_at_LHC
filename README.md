@@ -1,8 +1,8 @@
 # Using Machine Learning for Particle Tracking at the Large Hadron Collider
 Source code of the project titled: _"Using Machine Learning for Particle Tracking at the Large Hadron Collider"_ of the ENLACE 2023 Summer Camp at UCSD.
 
-This project was made for the ENLACE 2023 Research Summer Camp at the UCSD in a timeframe of 7 weeks and it's results were to be commited into a
-poster (available in the repo) as part of the requirements for the University Students' projects. Most of the code is developed with the Pytorch module.
+This project was made for the ENLACE 2023 Research Summer Camp at the UCSD in a timeframe of 7 weeks and its results were to be committed into a
+poster (available in the repo) as part of the requirements for the University Students' projects. Most of the code is developed with the PyTorch module.
 
 # Authors
 
