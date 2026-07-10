@@ -20,13 +20,13 @@ In the realm of particle physics, the Large Hadron Collider (LHC) stands as a co
 
 We subdivide this section further into the following subsections: (1) Compared Models, and (2) Code Pipeline. In (1) we describe the hyperparameters of the GNN, the Small DNN, and the Big DNN. In (2) we briefly describe the code snippets of the `./code/` directory and their purpose for extracting results of our model comparison.
 
-All of our Machine Learning experiments were executed inside one remote session of a Linux enviroment provided by the UCSD Supercomputing Cluster. All relevant plots were stored inside `./results/plots/` and they are displayed in the following **Results** section.
+All of our Machine Learning experiments were executed inside one remote session of a Linux environment provided by the UCSD Supercomputing Cluster. All relevant plots were stored inside `./results/plots/` and they are displayed in the following **Results** section.
 
 ## Compared Models
 
-We compared the lab's GNN prediction accuracy with our proposed models, the _Small DNN_ and the _Big DNN_. Hyperparameter data for the models can be appreciated in **Table 1**  The main difference between the _Small DNN_ and the _Big DNN_ is the number of neurons per layer, while the rest of hyperparameters stays the same.
+We compared the lab's GNN prediction accuracy with our proposed models, the _Small DNN_ and the _Big DNN_. Hyperparameter data for the models can be appreciated in **Table 1** The main difference between the _Small DNN_ and the _Big DNN_ is the number of neurons per layer, while the rest of hyperparameters stays the same.
 
-The comparisons made are in the following arrangement: (i) GNN vs. _Small DNN_, and (ii) GNN vs. _Big DNN_. We believed that the GNN model will remain the solid contender for the LS classification task, so it was deemed neccesary to compare the GNN against (i) a DNN with less neurons per layer, and (ii) one with more neurons per layer. This comparison allows the recollection of accuracy metrics to determine the best contender overall.
+The comparisons made are in the following arrangement: (i) GNN vs. _Small DNN_, and (ii) GNN vs. _Big DNN_. We believed that the GNN model will remain the solid contender for the LS classification task, so it was deemed necessary to compare the GNN against (i) a DNN with less neurons per layer, and (ii) one with more neurons per layer. This comparison allows the recollection of accuracy metrics to determine the best contender overall.
 
 | Hyperparameters / Model | **GNN*** | **_Small DNN_** | **_Big DNN_** |
 |---------------------|---------------|---------------|----------|
@@ -40,7 +40,7 @@ The comparisons made are in the following arrangement: (i) GNN vs. _Small DNN_, 
 
 ## Code Pipeline
 
-In summary, our pipeline consists of helper files, main collation files, training and testing files, and analysis files as well. In particular, for (v) we utilize an Adam optimized per the suggestion of ChatGPT. Furthermore, our mentor considered relevant to utilize the ROC Curve inside (viii) to visualize how well, or how poorly, our trained models were performing _in constrast with_ the lab's GNN.
+In summary, our pipeline consists of helper files, main collation files, training and testing files, and analysis files as well. In particular, for (v) we utilize an Adam optimized per the suggestion of ChatGPT. Furthermore, our mentor considered relevant to utilize the ROC Curve inside (viii) to visualize how well, or how poorly, our trained models were performing _in contrast with_ the lab's GNN.
 
 Adding further, the ROC Curve tells us how accurate and reliable are its predictions of a given binary classification model. We then plot both the GNN and Small DNN curves, and the GNN and Big DNN curves as well, to visually check _how juxtaposed_ are they. If the DNN curve is visually distinct from the GNN curve, we can ascertain that the GNN is doing better for this classification task. If they appear stacked on top of each other, with little to no gaps, the models are performing similar to each other. For an additional empirical check, we also calculate the ROC Curve Area of each model to numerically confirm the performance difference.
 
