@@ -6,7 +6,7 @@ poster (available in the repo) as part of the requirements for the University St
 
 # Authors
 
-- Alejandro Dennis
+- Alejandro Daniel Dennis Hernandez
 - Abraham Jhared Flores Azcona _(NotsoJharedtrollOx17)_  ``abrahamjhared.flores@gmail.com``
 
 # Abstract
@@ -137,7 +137,7 @@ We hereby state that ChatGPT<sup>1</sup> was utilized for the analysis, interpre
 @misc{
     dennisflores2023enlaceucsdproject,
     title = {Using Machine Learning for Particle Tracking at the Large Hadron Collider},
-    author = {Flores-Azcona, Abraham Jhared and Dennis, Alejandro},
+    author = {Flores-Azcona, Abraham Jhared and Dennis-Hernandez, Alejandro Daniel},
     year = {2023},
     month = {August},
     url = {https://github.com/NotsoJharedtrollOx17/Using_ML_for_Particle_Tracking_at_LHC}
